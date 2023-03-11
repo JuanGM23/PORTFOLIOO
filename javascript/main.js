@@ -1,3 +1,8 @@
+feature/Ejercicio3
+const asuntoInput = document.getElementById('asunto');
+const ccInput = document.getElementById('cc');
+const cuerpoInput = document.getElementById('cuerpo');
+=======
  release/1.3.0
 var botones = document.querySelectorAll('.tema');
 for (var i = 0; i < botones.length; i++) {
@@ -25,16 +30,46 @@ release/1.2.0
 function filtrarProyectos() {
     var filtro = document.getElementById('filtro');
     var proyectos = document.getElementById('proyectos');
+ main
 
-    var tecnologiaSeleccionada = filtro.value;
+const validateInput = (inputElement, validationFunction) => {
+    const inputValue = inputElement.value;
+    const isValid = validationFunction(inputValue);
+    if (isValid) {
+        inputElement.classList.remove('invalid');
+        inputElement.classList.add('valid');
+        const errorElement = inputElement.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.remove();
+        }
+    } else {
+        inputElement.classList.remove('valid');
+        inputElement.classList.add('invalid');
+        const errorElement = inputElement.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.textContent = 'Este campo no cumple los requisitos.';
+        } else {
+            const newErrorElement = document.createElement('div');
+            newErrorElement.classList.add('error');
+            newErrorElement.textContent = 'Este campo no cumple los requisitos.';
+            inputElement.parentNode.insertBefore(newErrorElement, inputElement.nextSibling);
+        }
+    }
+};
 
-    var cards = proyectos.getElementsByClassName('card');
+const validateAsunto = (asunto) => {
+    return asunto.trim() !== '';
+};
 
-    for (var i = 0; i < cards.length; i++) {
-        var card = cards[i];
+const validateCC = (cc) => {
+    return cc.trim() === '' || /\S+@\S+\.\S+/.test(cc);
+};
 
-        var tecnologias = card.getAttribute('data-tecnologias');
-
+const validateCuerpo = (cuerpo) => {
+    return cuerpo.trim() !== '';
+};
+feature/Ejercicio3
+=======
         if (tecnologiaSeleccionada === 'todos' || tecnologias.includes(tecnologiaSeleccionada)) {
             card.style.display = 'inline-block';
         } else {
@@ -84,7 +119,7 @@ const validateCC = (cc) => {
 const validateCuerpo = (cuerpo) => {
     return cuerpo.trim() !== '';
 };
-
+ main
 asuntoInput.addEventListener('blur', () => {
     validateInput(asuntoInput, validateAsunto);
 });
@@ -96,6 +131,8 @@ ccInput.addEventListener('blur', () => {
 cuerpoInput.addEventListener('blur', () => {
     validateInput(cuerpoInput, validateCuerpo);
 });
+feature/Ejercicio3
+=======
 =======
 =======
 var botones = document.querySelectorAll('.tema');
@@ -118,4 +155,4 @@ for (var i = 0; i < botones.length; i++) {
                 break;
         }
     });
-   }
+  main
