@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Este es mi trabajo final de js">
+    <meta name="keywords" content="html, css, javascript, bootstrap, proyectos">
+    <meta name="language" content="EN">
+    <meta name="author" content="juanjose.gavilan@a.vedrunasevillasj.es">
+    <meta name="robots" content="index,follow">
+    <meta name="revised" content="Tuesday, February 28th, 2023, 23:00pm">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge, chrome1">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/main.js" defer></script>
+
+    <link rel="shortcut icon" href="Img/foto letra J.jpeg" type="image/xpng">
+
+
+    <title>JuanJose's final js</title>
+
+</head>
+
+<body>
+    <div id="inicio">
+        <h3>
+            Bienvenido a mi proyecto final de javascript
+        </h3>
+    </div>
+    <p>Presiona uno de los botones para cambiar el tema de la pagina:</p>
+
+    <button id="rojo" class="tema">Rojo</button>
+    <button id="azul" class="tema">Azul</button>
+    <button id="verde" class="tema">Verde</button>
+    <button id="reset" class="tema">Reset</button>
+    <label for="filtro">Filtro:</label>
+	<select id="filtro" onchange="filtrarProyectos()">
+		<option value="todos" selected>Todos</option>
+		<option value="html">HTML</option>
+		<option value="css">CSS</option>
+		<option value="javascript">JavaScript</option>
+	</select>
+
+	<div id="proyectos">
+		<div class="card" data-tecnologias="html css">
+			<h2>Proyecto 1</h2>
+			<p>Desempeño: HTML, CSS</p>
+		</div>
+		<div class="card" data-tecnologias="javascript">
+			<h2>Proyecto 2</h2>
+			<p>Desempeño: JavaScript</p>
+		</div>
+		<div class="card" data-tecnologias="html">
+			<h2>Proyecto 3</h2>
+			<p>Desempeño: HTML</p>
+		</div>
+		<div class="card" data-tecnologias="css">
+			<h2>Proyecto 4</h2>
+			<p>Desempeño: CSS</p>
+		</div>
+		<div class="card" data-tecnologias="javascript">
+			<h2>Proyecto 5</h2>
+			<p>Desempeño: JavaScript</p>
+		</div>
+	</div>
+    <form>
+		<label>Asunto:</label><br>
+		<input type="text" id="asunto"><br>
+		<label>CC:</label><br>
+		<input type="text" id="cc"><br>
+		<label>Cuerpo:</label><br>
+		<textarea id="cuerpo"></textarea><br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+
+</html>
