@@ -1,3 +1,4 @@
+ release/1.3.0
 var botones = document.querySelectorAll('.tema');
 for (var i = 0; i < botones.length; i++) {
     botones[i].addEventListener('click', function () {
@@ -19,6 +20,8 @@ for (var i = 0; i < botones.length; i++) {
         }
     });
 }
+=======
+release/1.2.0
 function filtrarProyectos() {
     var filtro = document.getElementById('filtro');
     var proyectos = document.getElementById('proyectos');
@@ -39,6 +42,7 @@ function filtrarProyectos() {
         }
     }
 }
+release/1.3.0
 
 const asuntoInput = document.getElementById('asunto');
 const ccInput = document.getElementById('cc');
@@ -92,3 +96,26 @@ ccInput.addEventListener('blur', () => {
 cuerpoInput.addEventListener('blur', () => {
     validateInput(cuerpoInput, validateCuerpo);
 });
+=======
+=======
+var botones = document.querySelectorAll('.tema');
+for (var i = 0; i < botones.length; i++) {
+    botones[i].addEventListener('click', function () {
+        var botonPresionado = this.id;
+
+        switch (botonPresionado) {
+            case 'rojo':
+                document.body.className = 'rojo';
+                break;
+            case 'azul':
+                document.body.className = 'azul';
+                break;
+            case 'verde':
+                document.body.className = 'verde';
+                break;
+            case 'reset':
+                document.body.className = '';
+                break;
+        }
+    });
+   }
